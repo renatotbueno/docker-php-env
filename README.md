@@ -45,10 +45,10 @@ A complete PHP environment using:
 
 ### Services
 
-1. **Nginx** - http://ip_docker:8881
-2. **PHP-FPM** - http://ip_docker:9000
-3. **Redis** - http://ip_docker:8881
-4. **Solr** - http://ip_docker:8983
+1. **Nginx** - http://docker_ip:8881
+2. **PHP-FPM** - http://docker_ip:9000
+3. **Redis** - http://docker_ip:8881
+4. **Solr** - http://docker_ip:8983
 
 ##### - PHP
 The path *.ssh* is used to copy yours *ssh keys* to docker environment, that way you can use composer private packages from your github or bitbucket account using the same *ssh key* whithout add new *ssh key* on your github or bitbucket account.
@@ -61,5 +61,5 @@ The file *myapp.local.conf* is a use example.
 Into the **sorl** path you will find a *mycore* path that contains all solr configuration.
 The most important files are:
 - **core.properties** contains the database informations
-- **conf > data-config** contains the SQL to import data from your database to your solr core
+- **conf > data-config.xml** contains the SQL to import data from your database to your solr core
 - **conf > managed-schema** contains all your core fields ( your will find a commented section <!-- *my fields* -> )
