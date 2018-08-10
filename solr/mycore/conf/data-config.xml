@@ -1,0 +1,15 @@
+<dataConfig>
+
+    <dataSource type="JdbcDataSource"
+                driver="com.mysql.jdbc.Driver"
+                url="${url}"
+                user="${user}"
+                password="${password}"/>
+
+    <document name="mycore">
+        <entity onError="skip" name="mycore" pk="id" query="SELECT 1 as id, NOW() as date;">
+            <field column="id" name="id"/>
+            <field column="date" name="date"/>
+        </entity>
+    </document>
+</dataConfig>

@@ -1,0 +1,51 @@
+version: '3'
+services:
+    memcache:
+        image: memcached
+        ports:
+          - 11211:11211
+        command: memcached -u memcache
+
+    solr:
+        image: solr
+        ports:
+            - "8983:8983"
+        volumes:
+            - ./solr:/opt/solr/server/solr
+
+    redis:
+        build:
+            context: ./redis
+        ports:
+            - 6379:6379
+        restart: always
+
+    mysql:
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+
+    php:
+        build:
+            context: ./php
+        restart: always
+        volumes:
+             - "/var/www:/var/www/html"
+        links:
+            - mysql
+
+    nginx_app:
+        build:
+            context: ./nginx
+        volumes:
+            - "/var/www/myapp:/var/www/html/myapp"
+        ports:
+            - "8881:8881"
+        restart: always
+        links:
+            - php
+    
