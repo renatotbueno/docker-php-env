@@ -47,7 +47,7 @@ A complete PHP environment using:
 
 1. **Nginx** - http://docker_ip:8881
 2. **PHP-FPM** - http://docker_ip:9000
-3. **Redis** - http://docker_ip:8881
+3. **Redis** - http://docker_ip:11211
 4. **Solr** - http://docker_ip:8983
 
 ##### - PHP
