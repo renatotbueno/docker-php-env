@@ -17,6 +17,7 @@ A complete PHP environment using:
 
 ```
 ├── docker-php-env
+        ├── mysql
     │   ├── nginx
     │   │   ├── Dockefile
     │   │   └── myaoo.local.conf
@@ -47,6 +48,7 @@ A complete PHP environment using:
 
 1. **Nginx** - http://docker_ip:8881
 2. **PHP-FPM** - http://docker_ip:9000
+2. **Mysql** - http://docker_ip:3306
 3. **Redis** - http://docker_ip:11211
 4. **Solr** - http://docker_ip:8983
 
